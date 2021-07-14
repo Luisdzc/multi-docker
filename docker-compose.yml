@@ -16,7 +16,7 @@ services:
       - '3050:80'
   api:
     build:
-      dockerfile: Dockerfile
+      dockerfile: Dockerfile.dev
       context: ./server
     volumes:
       -   /home/node/app/node_modules
@@ -39,7 +39,7 @@ services:
       - ./client:/home/node/app
   worker:
     build:
-      dockerfile: Dockerfile
+      dockerfile: Dockerfile.dev
       context: ./worker
     volumes:
       - /home/node/app/node_modules
